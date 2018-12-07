@@ -1,0 +1,6 @@
+@import "./mixin.scss";
+@import "./theme.scss";
+.page-login{
+    display:inline-block;vertical-align:top;padding:30px 50px; background-color:$bgcolor; border-radius:8px;
+    box-shadow: 0 0 15px 1px #e1e1e1;@include center;
+}
