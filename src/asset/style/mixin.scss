@@ -1,3 +1,6 @@
 @mixin center($horizontal:50%,$vertical:50%){
     position:absolute; left:$horizontal; top:$vertical; transform:translate(-$vertical,-$vertical);
 }
+@mixin inlineBlock {
+    display:inline-block;vertical-align:top;
+}
