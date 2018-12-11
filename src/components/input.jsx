@@ -12,7 +12,15 @@ class Input extends Component {
         return (
             <section className = {`component-input ${this.props.className}`}>
                 {this.props.label && <label style={{width:this.props.labelWidth}}>{this.props.label}</label>}
-                <p><i></i><input type = {this.props.type} onInput = { this.change } placeholder= { this.props.placeholder } /></p>
+                <p>
+                    <i></i>
+                    <input 
+                        type = {this.props.type} 
+                        onInput = { this.props.input } 
+                        placeholder= { this.props.placeholder } 
+                        name = { this.props.name }
+                    />
+                </p>
             </section>
         )
     }
@@ -20,6 +28,7 @@ class Input extends Component {
 Input.defaultProps = {
     className:'',
     type:'text',
+    name:'',
 }
 Input.propTypes = {
     input:PropTypes.func,

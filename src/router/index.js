@@ -8,6 +8,7 @@ import PrivateRoute from '@component/privateroute';
 // );
 import Index from '@page/index';
 import Login from '@page/login';
+import Sf from '@page/suanfa';
 const pages = [
     {
         path:'/',
@@ -19,6 +20,11 @@ const pages = [
         name:'login',
         exact:true,
         component:Login,
+    },{
+        path:'/sf',
+        name:'sf',
+        exact:true,
+        component:Sf,
     }
 ]
 const routes = pages.map((page,key) => (<PrivateRoute { ...page } key={ key } />) );

@@ -3,7 +3,7 @@ class Button extends Component {
     render(){
         return (
             <section className = { `component-button ${ this.props.className }` }>
-                <button>{this.props.value}</button>
+                <button onClick = { this.props.onClick }>{this.props.value}</button>
             </section>
         )
     }

@@ -1,5 +1,8 @@
 @import "./mixin.scss";
 @import "./theme.scss";
+input::placeholder{
+    color:#999;
+}
 .page-login{
     display:inline-block;vertical-align:top;padding:30px 50px; background-color:$bgcolor; border-radius:8px; transition:all .5s;
     @include center; padding-top:60px;
@@ -21,4 +24,10 @@
 .component-button{ @include inlineBlock; 
     & > button {width:100%; border:none; line-height:34px;  border-radius:3px; padding:0 15px; cursor: pointer; outline:none; }
     &.large{display:block; width:100%; }
+}
+.component-sf{
+    width:100%; padding:20px; background-color:#e1e1e1;width:40%; margin-left:30%;
+    & ul{ display:flex; align-items: flex-end; justify-content:space-around; 
+        & > li { flex:0 0 auto; background-color:#d85645; width:20px;}
+    }
 }

@@ -7,9 +7,6 @@ class PrivateRoute extends Component {
             loginStatus : localStorage.getItem('token')
         }
     }
-    componentDidMount(){
-        
-    }
     render(){
         return(
             this.props.auth ? ( this.state.loginStatus ? <Route { ...this.props } /> : <Redirect to = {{pathname:'/login'}} />): <Route { ...this.props } />
