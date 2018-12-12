@@ -8,8 +8,14 @@ class PrivateRoute extends Component {
         }
     }
     render(){
+        let current;
+        if(this.props.redirect){
+            current = <Redirect to = { this.props.redirect } />
+        } else {
+            current = <Route { ...this.props } />
+        }
         return(
-            this.props.auth ? ( this.state.loginStatus ? <Route { ...this.props } /> : <Redirect to = {{pathname:'/login'}} />): <Route { ...this.props } />
+            this.props.auth ? ( this.state.loginStatus ? current : <Redirect to = {{pathname:'/login'}} />): <Route { ...this.props } />
         )
     }
 }

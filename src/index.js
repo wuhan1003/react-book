@@ -4,13 +4,14 @@ import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import routes from '@/router';
 import '@/asset/style/common.css';
 import '@/asset/style/pages.scss';
+import '@/asset/font/iconfont.css';
 // import App from './App';
 import * as serviceWorker from './serviceWorker';
 ReactDOM.render(
     <Router>
-        <Switch>
-        { routes }
-        </Switch>
+        <div>
+            { routes }
+        </div>
     </Router>,
     document.getElementById('root'));
 

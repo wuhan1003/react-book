@@ -9,6 +9,8 @@ import PrivateRoute from '@component/privateroute';
 import Index from '@page/index';
 import Login from '@page/login';
 import Sf from '@page/suanfa';
+import Chat from '@page/chat';
+import Nav from '@page/leftbar';
 const pages = [
     {
         path:'/',
@@ -25,7 +27,16 @@ const pages = [
         name:'sf',
         exact:true,
         component:Sf,
+    },{
+        path:'/nav',
+        component:Nav
+    },{
+        path:'/nav/chat',
+        name:'chat',
+        component:Chat
     }
+    
 ]
 const routes = pages.map((page,key) => (<PrivateRoute { ...page } key={ key } />) );
+
 export default routes;
