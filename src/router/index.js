@@ -10,32 +10,48 @@ import Index from '@page/index';
 import Login from '@page/login';
 import Sf from '@page/suanfa';
 import Chat from '@page/chat';
-import Nav from '@page/leftbar';
+import Article from '@page/article';
+// import Nav from '@page/leftbar';
 const pages = [
     {
         path:'/',
         auth:true,
         exact:true,
-        component:Index
-    },{
+        component:Index,
+        child:[
+            {
+                path:'/',
+                exact:true,
+                component:Chat,
+            },
+            {
+                path:'/article',
+                component:Article
+            }
+        ]
+    },
+    // {
+    //     path:'/nav',
+    //     component:Index,
+    //     child:[
+    //         {
+    //             paht:'/nav',
+    //             component:Chat,
+    //         }
+    //     ]
+    // },
+    {
         path:'/login',
         name:'login',
         exact:true,
         component:Login,
-    },{
+    },
+    {
         path:'/sf',
         name:'sf',
         exact:true,
         component:Sf,
-    },{
-        path:'/nav',
-        component:Nav
-    },{
-        path:'/nav/chat',
-        name:'chat',
-        component:Chat
     }
-    
 ]
 const routes = pages.map((page,key) => (<PrivateRoute { ...page } key={ key } />) );
 

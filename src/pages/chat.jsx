@@ -4,6 +4,8 @@ class Chat extends Component{
         super( props );
         this.state = {}
     }
+    componentDidMount(){
+    }
     render(){
         return(
             <section>
