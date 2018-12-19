@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FList from '@component/f-list';
 class Chat extends Component{
     constructor( props ){
         super( props );
@@ -8,8 +9,8 @@ class Chat extends Component{
     }
     render(){
         return(
-            <section>
-                <p>这是聊天页面</p>
+            <section className = "page-chat">
+                <FList { ...this.props } />
             </section>
         )
     }

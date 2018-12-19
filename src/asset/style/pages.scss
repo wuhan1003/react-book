@@ -13,8 +13,12 @@ input::placeholder{
     & .login-avatar { position:absolute;@include center; top:0;}
     &:hover{box-shadow: 0 0 15px 1px #e1e1e1;}
 }
-.page-index{
+.include-leftbar{
     width:100vw; height:100vh; overflow:hidden; display:flex;
+    & a{ display:block; width:100%; padding:10px 0; text-align:center;}
+    & > .main{
+        height:100%; flex:1 1 auto; background-color:#f5f5f5;
+    }
 }
 .component-left-nav{ width:40px; height:100%; background-color:#ccc;}
 .component-avatar{

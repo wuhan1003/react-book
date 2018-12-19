@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
-import routes from '@/router';
-import '@/asset/style/common.css';
-import '@/asset/style/pages.scss';
-import '@/asset/font/iconfont.css';
+import routes from './router';
+import './asset/style/common.css';
+import './asset/style/pages.scss';
+import './asset/font/iconfont.css';
 // import App from './App';
 import * as serviceWorker from './serviceWorker';
 ReactDOM.render(
     <Router>
-        <div>
+        <Switch>
             { routes }
-        </div>
+        </Switch>
     </Router>,
     document.getElementById('root'));
 

@@ -11,6 +11,13 @@ import Login from '@page/login';
 import Sf from '@page/suanfa';
 import Chat from '@page/chat';
 import Article from '@page/article';
+import Es from '@page/es6';
+import ChatDetail from '@page/chat-detail'
+const Nofound = props =>(
+    <section>
+        <p>404</p>
+    </section>
+)
 // import Nav from '@page/leftbar';
 const pages = [
     {
@@ -18,17 +25,20 @@ const pages = [
         auth:true,
         exact:true,
         component:Index,
-        child:[
-            {
-                path:'/',
-                exact:true,
-                component:Chat,
-            },
-            {
-                path:'/article',
-                component:Article
-            }
-        ]
+        // child:[
+        //     {
+        //         path:'/',
+        //         exact:true,
+        //         component:Chat,
+        //     },
+        // ]
+    },
+    
+    {
+        path:'/article',
+        auth:true,
+        exact:true,
+        component:Article
     },
     // {
     //     path:'/nav',
@@ -51,6 +61,22 @@ const pages = [
         name:'sf',
         exact:true,
         component:Sf,
+    },
+    {
+        path:'/es',
+        exact:true,
+        component:Es
+    },
+    {
+        path:'/:name',
+        auth:true,
+        exact:true,
+        component:ChatDetail,
+    },
+    {
+        path:'*',
+        exact:true,
+        component:Nofound
     }
 ]
 const routes = pages.map((page,key) => (<PrivateRoute { ...page } key={ key } />) );
