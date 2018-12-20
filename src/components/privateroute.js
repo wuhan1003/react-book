@@ -12,11 +12,25 @@ class PrivateRoute extends Component {
         if(this.props.redirect){
             current = <Redirect to = { this.props.redirect } />
         } else {
-            current = <Route  { ...this.props } />
+            current = <Route path = { this.props.path } render = { props => <this.props.component { ...props } child = {this.props.child}  />} />
         }
         return(
-            this.props.auth ? ( this.state.loginStatus ? current : <Redirect to = {{pathname:'/login'}} /> ) : <Route { ...this.props } />
+            this.props.auth ? ( this.state.loginStatus ? current : <Redirect to = {{pathname:'/login'}} /> ) : current
         )
     }
 }
+// function f( route ){
+//     const token = localStorage.getItem('token');
+//     let r;
+//      if( route.auth ){
+//          if( token ){
+//             route = <Route path = { this.props.path } render = { props => <this.props.component /> } />;
+//          } else {
+//            route = <Redirect to = {{pathname:'/login'}} />
+//          }
+//      } else {
+//         <Route path = { this.props.path } render = { props => <this.props.component /> } />
+//      }
+//      return r;
+// }
 export default PrivateRoute;

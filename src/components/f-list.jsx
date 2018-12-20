@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 class FList extends Component {
-    componentDidMount(){
-        console.log( this.props.match.path )
-    }
+    // componentDidMount(){
+    //     console.log( this.props.match.path )
+    // }
     render(){
         return (
             <section className = "component-f-list">
@@ -13,7 +13,7 @@ class FList extends Component {
                         this.props.data.map((data,key)=>{
                             return (
                                 <dd key = { key }>
-                                    <NavLink to = {`${this.props.match.path}${data.path}`}>{data.name}</NavLink>
+                                    <NavLink to = {`${this.props.match.path}/chat/${data.path}`} activeClassName = "currentRoute">{data.name}</NavLink>
                                 </dd>
                             )
                         })

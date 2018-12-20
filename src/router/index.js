@@ -12,7 +12,8 @@ import Sf from '@page/suanfa';
 import Chat from '@page/chat';
 import Article from '@page/article';
 import Es from '@page/es6';
-import ChatDetail from '@page/chat-detail'
+import ChatDetail from '@page/chat-detail';
+import Nav from '@page/nav';
 const Nofound = props =>(
     <section>
         <p>404</p>
@@ -27,19 +28,43 @@ const pages = [
         component:Index,
         // child:[
         //     {
-        //         path:'/',
-        //         exact:true,
+        //         path:'/nav',
         //         component:Chat,
         //     },
         // ]
     },
-    
     {
-        path:'/article',
+        path:'/nav',
         auth:true,
-        exact:true,
-        component:Article
+        component:Nav,
+        child:[
+            {
+                path:'/nav',
+                exact:true,
+                component:Chat,
+                child:[
+                    {
+                        path:'/nav/chat/:name',
+                        exact:true,
+                        component:ChatDetail
+                    }
+                ]
+            },
+            {
+                path:'/nav/article',
+                auth:true,
+                component:Article
+            },
+        ]
     },
+    
+    
+    // {
+    //     path:'/article',
+    //     auth:true,
+    //     exact:true,
+    //     component:Article
+    // },
     // {
     //     path:'/nav',
     //     component:Index,
@@ -67,15 +92,13 @@ const pages = [
         exact:true,
         component:Es
     },
+    // {
+    //     path:'/:name',
+    //     auth:true,
+    //     exact:true,
+    //     component:ChatDetail,
+    // },
     {
-        path:'/:name',
-        auth:true,
-        exact:true,
-        component:ChatDetail,
-    },
-    {
-        path:'*',
-        exact:true,
         component:Nofound
     }
 ]
