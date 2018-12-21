@@ -11,8 +11,8 @@ class Nav extends Component {
                 <LeftBar { ...this.props } />
                 {
                     this.props.child && this.props.child.map((route,key)=>(
-                        // <Route path = { route.path } render = { props => <route.component { ...props } child = {route.child} />} key={key} />
-                        <Route { ...route } key={key} />
+                        <Route path = { route.path } exact render = { props => <route.component { ...props } child = {route.child} />} key={key} />
+                        // <Route { ...route } key={key} />
                     ))
                 }
             </section>

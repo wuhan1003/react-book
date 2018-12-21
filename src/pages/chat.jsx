@@ -26,7 +26,9 @@ class Chat extends Component{
                 <FList { ...this.props } data = { this.state.data } />
                 <Switch>
                 {
-                    this.props.child && this.props.child.map((route,key)=><Route {...route} key={key} />)
+                    this.props.child && this.props.child.map((route,key)=><Route path = { route.path } render = {
+                        props => <route.component { ...route } />
+                    } key={key} />)
                 }
                 </Switch>
             </section>

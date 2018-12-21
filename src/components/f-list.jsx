@@ -13,7 +13,7 @@ class FList extends Component {
                         this.props.data.map((data,key)=>{
                             return (
                                 <dd key = { key }>
-                                    <NavLink to = {`${this.props.match.path}/chat/${data.path}`} activeClassName = "currentRoute">{data.name}</NavLink>
+                                    <NavLink to = {`${this.props.match.path}/${data.path}`} activeClassName = "currentRoute">{data.name}</NavLink>
                                 </dd>
                             )
                         })
