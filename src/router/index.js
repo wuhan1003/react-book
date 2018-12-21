@@ -41,20 +41,18 @@ const pages = [
             {
                 path:'/nav',
                 exact:true,
-                component:Chat,
-                child:[
-                    {
-                        path:'/nav/chat/:name',
-                        exact:true,
-                        component:ChatDetail
-                    }
-                ]
+                component:Chat
             },
             {
                 path:'/nav/article',
                 auth:true,
                 component:Article
             },
+            {
+                path:'/nav/:name',
+                exact:true,
+                component:ChatDetail
+            }
         ]
     },
     
