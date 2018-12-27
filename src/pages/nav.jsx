@@ -1,20 +1,24 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route  } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route,Redirect  } from 'react-router-dom';
 import LeftBar from '@component/leftbar';
 class Nav extends Component {
-    componentDidMount(){
-        console.log( this.props )
-    }
+   constructor( props ){
+       super( props );
+       this.state = {}
+   }
     render(){
         return (
             <section className = "include-leftbar">
                 <LeftBar { ...this.props } />
+                <Switch>
                 {
-                    this.props.child && this.props.child.map((route,key)=>(
-                        <Route path = { route.path } exact render = { props => <route.component { ...props } child = {route.child} />} key={key} />
+                    
+                    this.props.routes && this.props.routes.map((route,key)=>(
+                        <Route path = { route.path } exact = { route.exact } render = { props => <route.component { ...props } />} key={key} />
                         // <Route { ...route } key={key} />
                     ))
                 }
+                </Switch>
             </section>
         )
     }

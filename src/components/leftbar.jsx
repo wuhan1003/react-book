@@ -6,17 +6,14 @@ class LeftBar extends Component {
         super( props ); 
         this.state = {}
     }
-    // componentDidMount(){
-    //     // console.log( this.props )
-    // }
     render(){
         return (
             <aside className = "component-left-nav">
                 <nav>
-                    <NavLink to = {this.props.match.url} exact activeClassName = "currentRoute">
+                    <NavLink to = {`${this.props.match.url}`} exact activeClassName = "currentRoute">
                         <i className="iconfont icon-atm"></i>
                     </NavLink>
-                    <NavLink to = {`${this.props.match.url}/article`} activeClassName = "currentRoute">
+                    <NavLink to = {`${this.props.match.url}/chat`} activeClassName = "currentRoute">
                         <i className="iconfont icon-atm"></i>
                     </NavLink>
                     {/* <NavLink to = {`${this.props.match.url}/chat`} activeClassName = "currentRoute"><i className="iconfont icon-atm"></i></NavLink> */}

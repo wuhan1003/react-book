@@ -6,15 +6,16 @@ class ChatDetail extends Component {
             match : this.props.match,
         }
     }
-    componentDidMount(){
-        console.log( this.props )
-    }
+    // componentDidMount(){
+    //     console.log( this.props )
+    // }
     render(){
         return (
             <section>
-                <p>{this.state.match.params.name}</p>
+                <section style = {{width:'100px',height:'100px'}}>这是详情页面</section>
+                <p>{this.props.match.params.name}</p>
             </section>
         )
     }
 }
-export default ChatDetail;
+export default ChatDetail; 

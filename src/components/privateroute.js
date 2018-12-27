@@ -10,9 +10,13 @@ class PrivateRoute extends Component {
     render(){
         let current;
         if(this.props.redirect){
-            current = <Redirect to = { this.props.redirect } />
+            current = <Redirect from = { this.props.path } to = { this.props.redirect } />
         } else {
-            current = <Route path = { this.props.path } render = { props => <this.props.component { ...props } child = {this.props.child}  />} />
+            current = <Route 
+                path = { this.props.path } 
+                render = { 
+                    props => <this.props.component  { ...props } routes = {this.props.routes} />
+                } />
         }
         return(
             this.props.auth ? ( this.state.loginStatus ? current : <Redirect to = {{pathname:'/login'}} /> ) : current
@@ -24,12 +28,12 @@ class PrivateRoute extends Component {
 //     let r;
 //      if( route.auth ){
 //          if( token ){
-//             route = <Route path = { this.props.path } render = { props => <this.props.component /> } />;
+//             route = <Route path = { this.props.path } render = { props => <this.props.component { ...props } /> } />;
 //          } else {
 //            route = <Redirect to = {{pathname:'/login'}} />
 //          }
 //      } else {
-//         <Route path = { this.props.path } render = { props => <this.props.component /> } />
+//         <Route path = { this.props.path } render = { props => <this.props.component { ...props } /> } />
 //      }
 //      return r;
 // }

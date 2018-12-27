@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import FList from '@component/f-list';
+import ChatDetail from './chat-detail';
 class Chat extends Component{
     constructor( props ){
         super( props );
@@ -26,9 +27,9 @@ class Chat extends Component{
                 <FList { ...this.props } data = { this.state.data } />
                 <Switch>
                 {
-                    this.props.child && this.props.child.map((route,key)=><Route path = { route.path } render = {
-                        props => <route.component { ...route } />
-                    } key={key} />)
+                    this.props.routes && this.props.routes.map((route,key)=>(
+                        <Route path = { route.path } exact = { route.exact } render = { props => <route.component { ...props } />} key={key} />
+                    ))
                 }
                 </Switch>
             </section>

@@ -37,25 +37,42 @@ const pages = [
         path:'/nav',
         auth:true,
         component:Nav,
-        child:[
+        routes:[
             {
                 path:'/nav',
                 exact:true,
-                component:Chat
+                component:Article,
             },
             {
                 path:'/nav/article',
-                auth:true,
+                exact:true,
                 component:Article
             },
             {
-                path:'/nav/:name',
-                exact:true,
-                component:ChatDetail
-            }
+                path:'/nav/chat',
+                component:Chat,
+                routes:[
+                    {
+                        path:'/nav/chat/:name',
+                        exact:true,
+                        component:ChatDetail
+                    }
+                ]
+            },
+            
+            // {
+            //     path:'/nav/chat/:name',
+            //     exact:true,
+            //     component:ChatDetail
+            // }
+            // {
+            //     path:'/nav/:name',
+            //     exact:true,
+            //     component:ChatDetail
+            // }
+            
         ]
     },
-    
     
     // {
     //     path:'/article',
@@ -94,7 +111,7 @@ const pages = [
     //     path:'/:name',
     //     auth:true,
     //     exact:true,
-    //     component:ChatDetail,
+    //     component:ChatDetail, 
     // },
     {
         component:Nofound
