@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import proxy from '../ecmascript/proxy';
 import Emitter from '../ecmascript/emmitter';
-class Es extends Component {
+class Es extends Component { 
     componentDidMount(){
         const n = new Emitter();
         n.on('test',function(...rest){

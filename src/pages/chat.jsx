@@ -24,7 +24,7 @@ class Chat extends Component{
     render(){
         return(
             <section className = "page-chat">
-                <FList { ...this.props } data = { this.state.data } />
+                <FList { ...this.props } data = { this.state.data } /> 
                 <Switch>
                 {
                     this.props.routes && this.props.routes.map((route,key)=>(
